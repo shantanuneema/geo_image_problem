@@ -23,9 +23,9 @@ data_folder_list = ['test','train','valid']
 class_folder_list = ['andesite','gneiss','marble','quartzite','rhyolite','schist']
 
 # ratio of data going in train, test and validation folders respectively:
-ratio_train = 0.8
-ratio_test = 0.1
-ratio_valid = 0.1
+ratio_train = 0.7
+ratio_test = 0.15
+ratio_valid = 0.15
 
 # image size input
 image_size = 28

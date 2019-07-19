@@ -41,9 +41,15 @@ def load_and_restruct_data(dir_path,
 
     cpt = sum([len(files) for r, d, files in os.walk(image_folder)])
 
-    if os.path.isdir(image_folder) and cpt > 5000 and all([os.path.isdir(image_folder+f) \
-                                                           for f in class_folder_list]):
-        print('Data is stored in', dir_path)
+    if os.path.isdir(image_folder) and cpt > 25000 and all([os.path.isdir(image_folder+f) \
+                                                           for f in class_folder_list+data_folder_list]):
+        print('Removing original folders')
+        for f in class_folder_list:
+            shutil.rmtree(os.path.join(image_folder,f))            
+        print('Data is stored as train, test & validation folders in', dir_path)
+    elif os.path.isdir(image_folder) and cpt > 25000 and all([os.path.isdir(image_folder+f) \
+                                                           for f in data_folder_list]):
+        print('Data is stored as train, test & validation folders in', dir_path)
     else:
         try:
             # unzipped the data from the handler
@@ -76,5 +82,6 @@ def load_and_restruct_data(dir_path,
     '''
     tfms = get_transforms(do_flip=True, flip_vert=True)
     geo_data = ImageDataBunch.from_folder(image_folder, ds_tfms = tfms, size = image_size)
+    geo_data.normalize(imagenet_stats)
     
-    return geo_data
+    return geo_data, tfms
