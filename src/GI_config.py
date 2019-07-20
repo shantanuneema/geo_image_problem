@@ -19,6 +19,7 @@ image_folder = str(dir_path) + '/geological_similarity/'
 # Desired data folders as train, test and validation set for each label image
 # Expected folder structure to let fastai library work
 data_folder_list = ['test','train','valid']
+
 # Expected folder structure for a 6 image type classification
 class_folder_list = ['andesite','gneiss','marble','quartzite','rhyolite','schist']
 
@@ -29,3 +30,6 @@ ratio_valid = 0.15
 
 # image size input
 image_size = 28
+
+# similarity distance (angular for cosine distance and euclidean otherwise)
+sim_dist_type = 'angular'
