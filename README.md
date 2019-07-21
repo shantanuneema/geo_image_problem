@@ -1,4 +1,4 @@
-## Image similarity search using FastAI and Locality Sensitive hashing (Annoy) 
+## Image similarity search tool using FastAI and Annoy
 ### On fine grain microscopic rock thin sections to see similar fine grain patterns in 6 different types of rocks
 
 __High-level approach__ -
@@ -11,5 +11,6 @@ __Implementation__
 
 A detail notebook using the given dataset to generate model: https://github.com/shantanuneema/geo_image_problem/blob/master/notebooks/develop_gi_similarity_model.ipynb
 
-A user interface to find top k similar rocks by using different models, and distance types:
+A user interface to find top K similar rocks by using different models, and distance types:
 https://github.com/shantanuneema/geo_image_problem/blob/master/notebooks/run_gi_sim.ipynb
+

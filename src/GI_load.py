@@ -71,7 +71,7 @@ def load_and_restruct_data(dir_path,
     if not set(data_folder_list).issubset(set(current_folders)):
         sys.exit('Input data is invalid, the input folder structure is incorrect')
 
-    '''
+
     # Following method to remove the original folders if needed
     if os.path.isdir(image_folder):
         folder_list = [f for f in os.listdir(image_folder) if not f.startswith('.') and f not in data_folder_list]
@@ -79,7 +79,7 @@ def load_and_restruct_data(dir_path,
             if f:
                 shutil.rmtree(os.path.join(image_folder, f))
                 print('   removing folder', f, 'from the directory') 
-    '''
+
     tfms = get_transforms(do_flip=True, flip_vert=True)
     geo_data = ImageDataBunch.from_folder(image_folder, ds_tfms = tfms, size = image_size)
     geo_data.normalize(imagenet_stats)
