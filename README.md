@@ -13,5 +13,6 @@ __High-level approach__ -
 __Implementation__
 
 A detail notebook using the given dataset to generate model: https://github.com/shantanuneema/geo_image_problem/blob/master/notebooks/develop_gi_similarity_model.ipynb
+
 A user interface to find top k similar rocks by using different models, and distance types:
 https://github.com/shantanuneema/geo_image_problem/blob/master/notebooks/run_gi_sim.ipynb
