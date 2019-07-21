@@ -1,8 +1,5 @@
-# geo_image_problem
-image similarity problem
-
-## Image similarity search using FastAI and Locality Sensitive hashing (Annoy)
-### On fine grain microscopic rock thin sections
+## Image similarity search using FastAI and Locality Sensitive hashing (Annoy) 
+### On fine grain microscopic rock thin sections to see similar fine grain patterns in 6 different types of rocks
 
 __High-level approach__ -
 1) Transfer learning from a ResNet-34 model(trained on ImageNet) to develop an image classifier for igneous and metamorphic rock thin sections.
