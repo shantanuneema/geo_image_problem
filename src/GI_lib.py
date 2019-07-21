@@ -9,7 +9,8 @@ The purpose of this file is to create any additional functions or classes needed
 
 import decimal
 from fastai.vision import *
-import GI_config as conf_lib
+from annoy import AnnoyIndex
+from PIL import Image
 
 # Function to format decimals to scientific notations
 def format_decimal(x, prec=2):
@@ -39,10 +40,10 @@ def get_named_module_from_model(model, name):
     return None
 
 # Function to get similar images using Annoy
-def get_similar_images_annoy(img_index, img_repr_df, inference_data, k):
+def get_similar_images_annoy(img_index, img_repr_df, inference_data, dist_type, k):
     
     feature_dim = len(img_repr_df['img_repr'][0])
-    t = AnnoyIndex(feature_dim, metric=conf_lib.sim_dist_type)
+    t = AnnoyIndex(feature_dim, metric=dist_type)
 
     for i, vector in enumerate(img_repr_df['img_repr']):
         t.add_item(i, vector)
